@@ -5,11 +5,13 @@ import EErrors from "../middlewares/errors/enums.js";
 import * as info from "../middlewares/errors/info.js";
 
 const getProducts = async (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     const products = await serviceModule.getProducts(); // Traigo el array de productos
     res.send({status: "success", payload: products});
 }
 
 const createProduct = async (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     const product = req.body;
     const {title, description, price, code, stock, category} = product; // Traigo el producto a agregar desde el body
 
@@ -28,6 +30,7 @@ const createProduct = async (req, res) => {
 }
 
 const getMockingProducts = (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     let products = [];
     for (let i = 0; i < 100; i++) {
         products.push(generateProducts());

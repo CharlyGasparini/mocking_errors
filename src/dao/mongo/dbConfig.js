@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 import config from "../../config/config.js";
+import { logger } from "../../logger.js";
 
 try {
     await mongoose.connect(config.mongoUrl);
-    console.log("Conectado")
+    logger.info("Conectado")
 } catch (error) {
-    console.log(error);
+    logger.error(error);
 }

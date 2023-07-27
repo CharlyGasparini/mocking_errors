@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
+    "prod": "nodemon src/app.js --mode PRODUCTION",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +25,7 @@
     "mongoose": "^7.4.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
   }
 }

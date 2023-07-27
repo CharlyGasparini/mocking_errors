@@ -1,0 +1,6 @@
+{"level":"fatal","message":"Prueba: log fatal"}
+{"level":"error","message":"Prueba: log error"}
+{"level":"error","message":"res.sendSuccess is not a function - Thu Jul 27 2023 01:57:39 GMT-0300 (hora estándar de Argentina)"}
+{"level":"fatal","message":"Prueba: log fatal"}
+{"level":"error","message":"Prueba: log error"}
+{"level":"error","message":"Error al intentar crear un usuario - Thu Jul 27 2023 01:58:48 GMT-0300 (hora estándar de Argentina)"}

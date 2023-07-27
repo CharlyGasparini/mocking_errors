@@ -6,7 +6,8 @@ import CustomError from "../middlewares/errors/CustomError.js";
 import EErrors from "../middlewares/errors/enums.js";
 import * as info from "../middlewares/errors/info.js";
 
-const login = async (req, res) => {    
+const login = async (req, res) => { 
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);   
     const {email, password} = req.body;
 
     if(!email || !password) {
@@ -66,10 +67,12 @@ const login = async (req, res) => {
 }
 
 const logout = (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     res.clearCookie("cookieToken").send({status: "success", message: "Deslogueado con éxito"});
 }
 
 const register = async (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     const { first_name, last_name, age, email, password} = req.body;
     if(!first_name || !last_name || !age || !email || !password){
         throw CustomError.createError({
@@ -97,6 +100,7 @@ const register = async (req, res) => {
 }
 
 const getCurrentUser = (req, res) => {
+    req.logger.http(`${req.method} en ${req.url} - ${new Date().toString()}`);
     const result = new UserDto(req.user);
     res.send({status: "success", payload: result});
 }
